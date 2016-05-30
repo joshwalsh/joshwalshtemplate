@@ -1,0 +1,5 @@
+{% set image = block.image.first %}
+{% set display = block.display %}
+{% set width = block.width %}
+
+<img src="{{ image.url }}" alt="{{ image.title }}" {% if width > 0 %}width="{{ width }}"{% endif %} class="{% if display.value == 'floatLeft' %}fl{% elseif display.value == 'floatRight' %}fr{% endif %}" />

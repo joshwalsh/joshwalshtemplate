@@ -1,0 +1,10 @@
+{% if excerpt == true %}
+  {% set block = matrix.first %}
+  {% include "_components/body/" ~ block.type %}
+{% else %}
+  {% for block in matrix %}
+
+  {% include "_components/body/" ~ block.type %}
+
+  {% endfor %}
+{% endif %}

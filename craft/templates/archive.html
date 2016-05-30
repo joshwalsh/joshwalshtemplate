@@ -1,0 +1,18 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<div class="l-container">
+  {% set categories = craft.categories.group('topics') %}
+  {% for category in categories %}
+    <h2 class="secondary-headline">{{ category.title }}</h2>
+
+    <ul>
+      {% for entry in craft.entries.section('blogPosts') %}
+        <li>{{ entry.link }}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
+
+{% endblock %}

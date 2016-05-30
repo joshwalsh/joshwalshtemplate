@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<link rel="home" href="{{ siteUrl }}" />
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="/images/icon.png">
+
+	<link rel="stylesheet" href="/css/styles.css" media="screen" title="Main Stylesheet" charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,900,400italic,700' rel='stylesheet' type='text/css'>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div id="container">
+		<main id="content" role="main">
+			{% set featuredimage = entry.featuredImage.first %}
+
+			<div class="mast mast-photo" style="background-image: url({{ featuredimage.url }})">
+				<div class="l-container">
+					<ul class="mast__icons">
+						<li class="mast__icons-twitter"><a href="http://twitter.com/joshwalsh"><img src="/images/twitter.svg" height="32"></a></li>
+						<li class="mast__icons-facebook"><a href="http://www.facebook.com/JoshWalshcom"><img src="/images/facebook.svg" height="32"></a></li>
+						<li class="mast__icons-home"><a href="/"><img src="/images/home.svg" height="32"></a></li>
+					</ul>
+				</div>
+
+			  <h1 class="mast__title">{{ entry.title }}</h1>
+			  {% if entry.subtitle %}<h2 class="mast__subtitle">{{ entry.subtitle }}</h2>{% endif %}
+			</div>
+
+			{% block content %}
+
+			{% endblock %}
+		</main>
+
+		<div class="footer">
+			<div class="l-container">
+				<ul class="footer__nav">
+					{% for entry in craft.entries.section('navigation') %}
+					<li><a href="{{ entry.relatedPage.first.url }}">{{ entry.title }}</a></li>
+					{% endfor %}
+				</ul>
+
+				<p class="footer__copyright">Copyright &copy; 2016 Josh Walsh</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

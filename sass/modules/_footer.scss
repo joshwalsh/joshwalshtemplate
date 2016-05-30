@@ -1,0 +1,40 @@
+.footer {
+  border-top: 1px solid #ddd;
+  margin-top: em(32px, 16px);
+  padding-top: em(16px, 16px);
+
+  &__nav {
+    margin-top: 0;
+    padding-left: 0;
+
+    > li {
+      display: inline-block;
+      margin-right: $default-whitespace;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include respond-to(em(500px), max-width) {
+      > li {
+        display: block;
+
+        a {
+          display: block;
+          padding: em(8px, 16px) 0;
+        }
+      }
+    }
+
+    a {
+      color: #555;
+    }
+  }
+
+  &__copyright {
+    font-size:em(12px, 16px);
+    color: #888;
+    padding-top: em(20px, 16px);
+  }
+}

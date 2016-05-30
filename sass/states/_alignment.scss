@@ -1,0 +1,23 @@
+.fl {
+  float: left;
+  margin: 1em;
+  margin-left: 0;
+
+  @include respond-to(em(500px), max-width) {
+    float: none;
+    display: block;
+    width: 100% !important;
+  }
+}
+
+.fr {
+  float: right;
+  margin: 1em;
+  margin-right: 0;
+
+  @include respond-to(em(500px), max-width) {
+    float: none;
+    display: block;
+    width: 100% !important;
+  }
+}
