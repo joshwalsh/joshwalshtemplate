@@ -954,8 +954,8 @@ embed {
         line-height: 1.2; } }
     @media screen and (min-width: 31.25em) {
       .mast__subtitle {
-        padding: 0 5% 10% 5%;
-        line-height: 0; } }
+        padding: 0 5% 5% 5%;
+        line-height: 1.2; } }
   .mast__icons {
     position: absolute;
     width: 100%;

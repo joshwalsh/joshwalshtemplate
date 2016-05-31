@@ -1,0 +1,26 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+{% set library = craft.entries.section('library').first() %}
+{% set featuredimage = library.featuredImage.first %}
+
+{% include '_components/_featured-mast' with {
+  'featuredImageURL': featuredimage.url,
+  'entryTitle': entry.title,
+  'subtitle': entry.externalAuthor
+} %}
+
+<div class="l-container">
+  <div class="row">
+    <div class="col-3 txt-center">
+      <img src="{{ entry.bookCover.first.url }}" />
+      <p><a href="{{ entry.externalURL}}" class="button">View on Amazon.com</a></p>
+    </div>
+    <div class="push-1 col-8">
+      {{ entry.summary }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

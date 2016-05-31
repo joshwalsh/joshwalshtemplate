@@ -5,6 +5,14 @@
 <body>
 	<div id="container">
 		<main id="content" role="main">
+			{% set featuredimage = entry.featuredImage.first %}
+
+			{% include '_components/_featured-mast' with {
+        'featuredImageURL': featuredimage.url,
+				'entryTitle': entry.title,
+				'subtitle': entry.subtitle
+      } %}
+
 			{% block content %}
 
 			{% endblock %}

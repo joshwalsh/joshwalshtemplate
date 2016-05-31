@@ -47,8 +47,8 @@
     }
 
     @include respond-to(em(500px)) {
-      padding: 0 5% 10% 5%;
-      line-height: 0;
+      padding: 0 5% 5% 5%;
+      line-height: 1.2;
     }
   }
 
