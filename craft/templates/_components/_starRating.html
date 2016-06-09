@@ -1,0 +1,8 @@
+{% switch rating %}
+  {% case -1 %}
+    Not Yet Rated
+  {% case 1 %}
+    Rated 1-Star
+  {% default %}
+    Rated {{rating}}-Stars
+{% endswitch %}

@@ -3,15 +3,23 @@
 {% block content %}
 
 <div class="l-container">
-  <div class="tile-container tile-container--three">
-    {% for entry in craft.entries.section('books') %}
-      <div class="tile__item">
-        <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" /></a>
-        <p>{{ entry.link }}<br>
-          By: {{ entry.externalAuthor }}</p>
-      </div>
-    {% endfor %}
-  </div>
+
+  {% for rating, ratedEntries in craft.entries.section('books').order('starRating DESC') | group('starRating') %}
+    <h2>
+      {% include '_components/_starRating' with {
+        'rating': rating
+      } %}
+    </h2>
+    <div class="tile-container tile-container--four">
+      {% for entry in ratedEntries %}
+        <div class="tile__item">
+          <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" /></a>
+          <p>{{ entry.link }}<br>
+            By: {{ entry.externalAuthor }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
 </div>
 
 {% endblock %}
