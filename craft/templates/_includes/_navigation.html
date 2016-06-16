@@ -1,0 +1,13 @@
+<div class="navigation" role="navigation">
+  <div class="l-container">
+    <ul class="list-navigation">
+      {% for entry in craft.entries.section('navigation') %}
+        <li><a href="{{ entry.relatedPage.first.url }}">{{ entry.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <ul class="navigation__icons">
+      <li class="navigation__icons-twitter"><a href="http://twitter.com/joshwalsh"><img src="/images/twitter.svg" height="20"></a></li>
+      <li class="navigation__icons-facebook"><a href="http://www.facebook.com/JoshWalshcom"><img src="/images/facebook.svg" height="20"></a></li>
+    </ul>
+  </div>
+</div>

@@ -3,22 +3,20 @@
 {% block content %}
 
 <div class="l-container">
-  <div class="row">
-    <div class="col-8 col-centered">
-      <div class="section-headline">Latest Post:</div>
+  {% for entry in craft.entries.section('blogPosts').limit(1) %}
+    <div class="row">
+      <div class="col-8 col-centered">
+          <h2 class="primary-headline">{{ entry.link }}</h2>
+          <h3 class="byline"><em>By</em> {{ entry.relatedAuthor.first.title }} <em>on</em> {{entry.postDate|date("M d, Y")}}</h3>
 
-      {% for entry in craft.entries.section('blogPosts').limit(1) %}
-        <h2 class="primary-headline">{{ entry.link }}</h2>
-        <h3 class="byline"><em>By</em> {{ entry.relatedAuthor.first.title }} <em>in</em> {{ entry.relatedTopic.first.title }} <em>on</em> {{entry.postDate|date("M d, Y")}}</h3>
+          {% include '_components/_body' with {
+            'matrix': entry.body
+          } %}
 
-        {% include '_components/_body' with {
-          'matrix': entry.body
-        } %}
-
-        <p><a href="{{ entry.url }}">Permalink</a></p>
-      {% endfor %}
+          <p><a href="{{ entry.url }}">Permalink</a></p>
+      </div>
     </div>
-  </div>
+  {% endfor %}
 </div>
 
 {% endblock %}

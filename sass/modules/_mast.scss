@@ -52,36 +52,6 @@
     }
   }
 
-  &__icons {
-    position: absolute;
-    width: 100%;
-    list-style-type: none;
-
-    > li {
-      padding: 0;
-      margin: 0;
-    }
-
-    &-home {
-      position: absolute;
-      left:0;
-      top: 16px;
-      z-index: 20;
-    }
-    &-facebook {
-      position: absolute;
-      right:0;
-      top: 16px;
-      z-index: 20;
-    }
-    &-twitter {
-      position: absolute;
-      right:64px;
-      top: 16px;
-      z-index: 20;
-    }
-  }
-
   &:after {
     content: '';
     position: absolute;
