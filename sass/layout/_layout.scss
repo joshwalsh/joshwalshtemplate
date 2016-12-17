@@ -14,6 +14,11 @@
 
 .l-section {
   margin-bottom: $default-whitespace;
+
+  &--divided {
+    padding-bottom: $default-whitespace;
+    border-bottom: 1px solid $default-border-color;
+  }
 }
 
 // Layout helpers

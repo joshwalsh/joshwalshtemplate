@@ -3,20 +3,44 @@
 {% block content %}
 
 <div class="l-container">
-  {% for entry in craft.entries.section('blogPosts').limit(1) %}
-    <div class="row">
-      <div class="col-8 col-centered">
-          <h2 class="primary-headline">{{ entry.link }}</h2>
-          <h3 class="byline"><em>By</em> {{ entry.relatedAuthor.first.title }} <em>on</em> {{entry.postDate|date("M d, Y")}}</h3>
+  <div class="row">
+    <div class="col-8">
+      {% for article in craft.entries.section('blogPosts').limit(6) %}
+        <div class="l-section l-section--divided">
+          <h2 class="primary-headline">{{ article.link }}</h2>
+          <h3 class="byline"><em>By</em> {{ article.relatedAuthor.first.title }} <em>on</em> {{article.postDate|date("M d, Y")}}</h3>
 
           {% include '_components/_body' with {
-            'matrix': entry.body
+            'inlineMast': article.featuredImage.first,
+            'excerpt': true,
+            'matrix': article.body
           } %}
 
-          <p><a href="{{ entry.url }}">Permalink</a></p>
+          <p><a href="{{ article.url }}">Continue Reading</a></p>
+        </div>
+      {% endfor %}
+
+      <a href="/recent-posts" class="button">See All of my Recent Posts</a>
+    </div>
+    <div class="col-4">
+      <div class="sidebar">
+        <h2 class="secondary-headline">About Josh</h2>
+        <p>I’m Josh.  I am the CEO of The Refinery, a global software development company in Cleveland, OH. The products we create have been used by tens of millions of people, likely even you.</p>
+        <p><a href="/about" class="button">Read My Story</a></p>
+      </div>
+      <div class="sidebar">
+        {% set featuredBook = craft.entries.section('books').order('starRating DESC').limit(1).first %}
+        <h2 class="secondary-headline">Featured Book</h2>
+        <img src="{{ featuredBook.bookCover.first.url }}" alt="{{ featuredBook.title }} by: {{ featuredBook.externalAuthor }}" />
+
+        {% if featuredBook.starRating != "-1" %}
+          <div><img src="/images/{{featuredBook.starRating}}-star.png" alt="{{ featuredBook.title }} rated {{featuredBook.starRating}} stars" width="85" height="16"></div>
+        {% endif %}
+
+        <p><a href="{{ featuredBook.url }}" class="button">Learn More</a> or <a href="/library">Visit Library</a></p>
       </div>
     </div>
-  {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

@@ -29,11 +29,12 @@
 }
 
 .byline {
+  color: #777;
   font-size: em(16px, 16px);
-  border-bottom: 1px solid #eee;
   padding: em(16px, 16px) 0 em(16px, 16px) 0;
-  margin: em(16px, 16px) 0 em(16px, 16px) 0;
+  margin: 0 0 em(16px, 16px) 0;
   font-family: $sans-serif-font;
+  font-style: italic;
 }
 
 .section-headline {
