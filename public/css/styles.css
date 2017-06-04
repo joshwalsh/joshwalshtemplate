@@ -437,7 +437,7 @@ embed {
   line-height: 1.25em;
   letter-spacing: -1px;
   color: #333;
-  margin: 0;
+  margin: 0 0 0.4em 0;
   padding: 0; }
   .primary-headline a {
     color: #333;
@@ -456,11 +456,14 @@ embed {
 
 .byline {
   color: #777;
-  font-size: 1em;
+  font-size: 0.875em;
+  font-weight: normal;
   padding: 1em 0 1em 0;
   margin: 0 0 1em 0;
-  font-family: "Lato", sans-serif;
-  font-style: italic; }
+  font-family: "Lato", sans-serif; }
+  .byline strong {
+    font-size: 1.14286em;
+    display: block; }
 
 .section-headline {
   font-size: 1em;
