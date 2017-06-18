@@ -16,27 +16,29 @@
     margin: 0;
     font-weight: 900;
     line-height: 1.2;
-    font-size: 7vw;
+    font-size: 5vw;
     z-index: 10;
     position: relative;
 
     @include respond-to(em(500px), max-width) {
-      padding: 50% 5% em(15px) 5%;
+      padding: 30% 5% em(5px) 5%;
+      font-size: 7vw;
     }
 
     @include respond-to(em(500px)) {
-      padding: 40% 5% em(5px) 10%;
+      padding: 25% 5% em(5px) 10%;
+      font-size: 7vw;
     }
 
     @include respond-to(em(800px)) {
-      padding: 28% 5% em(5px) 10%;
+      padding: 20% 5% em(5px) 10%;
     }
   }
 
   &__subtitle {
     color: #efefef;
     font-weight: normal;
-    font-size: 4vw;
+    font-size: 3vw;
     z-index: 10;
     position: relative;
     margin-bottom: 0;
@@ -44,6 +46,7 @@
     @include respond-to(em(500px), max-width) {
       padding: 0 15% 12% 15%;
       line-height: 1.2;
+      font-size: 4vw;
     }
 
     @include respond-to(em(500px)) {

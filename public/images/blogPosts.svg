@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M19.077,4 L19.077,4.045 L4,19.091 L4,76.021 L56.198,76.021 L56.198,4 L19.077,4 Z M50.198,70.021 L10,70.021 L10,25.091 L25.077,25.091 L25.077,10 L50.198,10 L50.198,70.021 L50.198,70.021 Z" id="Fill-811" fill="#000000"></path>
+        <polygon id="Fill-812" fill="#000000" points="15.334 36.191 39.484 36.191 39.484 31.4 15.334 31.4"></polygon>
+        <polygon id="Fill-813" fill="#000000" points="15.334 46.986 32.424 46.986 32.424 42.195 15.334 42.195"></polygon>
+        <polygon id="Fill-814" fill="#000000" points="15.334 57.709 44.679 57.709 44.679 52.918 15.334 52.918"></polygon>
+    </g>
+</svg>
