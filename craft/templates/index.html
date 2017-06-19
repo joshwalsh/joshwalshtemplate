@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="l-container">
-  {% for article in craft.entries.section('blogPosts').limit(25) %}
+  {% for article in craft.entries.section('blogPosts').limit(10) %}
     {% include 'blog-posts/_partial' with {
       'article': article
     } %}
