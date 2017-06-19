@@ -35,3 +35,24 @@
   text-transform: uppercase;
   margin-bottom: em(12px, 16px);
 }
+
+.blockquote {
+  background: #efefef;
+  padding: em(20px);
+  font-style:italic;
+  margin: 0;
+
+  > p {
+    margin-top: 0;
+  }
+
+  .citation {
+    border-top: 1px solid #bbb;
+    font-size: em(11px);
+    padding-top: em(18px, 11px);
+  }
+}
+
+.fine-print {
+  font-size: em(11px);
+}

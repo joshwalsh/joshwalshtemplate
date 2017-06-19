@@ -3,27 +3,11 @@
 {% block content %}
 
 <div class="l-container">
-  {% for article in craft.entries.section('blogPosts').limit(6) %}
-    <div class="l-section l-section--divided article-list-item article-{{ article.type }}">
-      <div class="row">
-        <div class="col-9 push-3">
-            <h2 class="primary-headline">{{ article.link }}</h2>
-            <h3 class="byline">
-              <strong>By: {{ article.relatedAuthor.first.title }}</strong>
-              on {{article.postDate|date("M d, Y")}}
-            </h3>
-
-            {% include '_components/_body' with {
-              'inlineMast': article.featuredImage.first,
-              'excerpt': true,
-              'matrix': article.body
-            } %}
-        </div>
-      </div>
-    </div>
+  {% for article in craft.entries.section('blogPosts').limit(25) %}
+    {% include 'blog-posts/_partial' with {
+      'article': article
+    } %}
   {% endfor %}
-
-  <a href="/recent-posts" class="button">See All of my Recent Posts</a>
 </div>
 
 {% endblock %}

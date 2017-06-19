@@ -1,38 +1,22 @@
 .mast {
+  background: #222;
+  color: #fff;
   width: 100%;
-  background: #eee;
   text-align: center;
   z-index:1;
   position: relative;
   margin-bottom: em(32px, 16px);
-
-  &-photo {
-    background-size: cover;
-    background-position: 50% 0%;
-  }
+  padding-bottom: em(22px, 16px);
 
   &__title {
-    color: #fff;
     margin: 0;
     font-weight: 900;
+    font-size: em(40px);
+    padding-top: em(20px);
     line-height: 1.2;
-    font-size: 5vw;
     z-index: 10;
     position: relative;
 
-    @include respond-to(em(500px), max-width) {
-      padding: 30% 5% em(5px) 5%;
-      font-size: 7vw;
-    }
-
-    @include respond-to(em(500px)) {
-      padding: 25% 5% em(5px) 10%;
-      font-size: 7vw;
-    }
-
-    @include respond-to(em(800px)) {
-      padding: 20% 5% em(5px) 10%;
-    }
   }
 
   &__subtitle {
@@ -55,14 +39,41 @@
     }
   }
 
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    z-index:5;
+  &-photo {
+    background: #eee;
+    background-size: cover;
+    background-position: 50% 0%;
+    color: #fff;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+      z-index:5;
+    }
+
+    .mast__title {
+      font-size: 5vw;
+
+      @include respond-to(em(500px), max-width) {
+        padding: 30% 5% em(5px) 5%;
+        font-size: 7vw;
+      }
+
+      @include respond-to(em(500px)) {
+        padding: 25% 5% em(5px) 10%;
+        font-size: 7vw;
+      }
+
+      @include respond-to(em(800px)) {
+        padding: 20% 5% em(5px) 10%;
+      }
+    }
   }
+
+
 }

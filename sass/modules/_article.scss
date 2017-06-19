@@ -31,12 +31,20 @@
       top: 0;
     }
   }
+}
 
-  &.article-blogPosts {
-    .byline {
-      background: url(/images/blogPosts.svg) no-repeat left 10%;
-      background-size: 26px;
-      padding-left: 30px;
-    }
+.article-blogPosts {
+  .byline {
+    background: url(/images/blogPosts.svg) no-repeat left 10%;
+    background-size: 26px;
+    padding-left: 30px;
+  }
+}
+
+.article-linkPosts {
+  .byline {
+    background: url(/images/linkPosts.svg) no-repeat left 10%;
+    background-size: 26px;
+    padding-left: 30px;
   }
 }

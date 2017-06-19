@@ -1,4 +1,9 @@
-<div class="mast mast-photo" style="background-image: url({{featuredImageURL}})">
+{% if featuredImageURL %}
+  <div class="mast mast-photo" style="background-image: url({{featuredImageURL}})">
+{% else %}
+  <div class="mast">
+{% endif %}
+
   <h1 class="mast__title">{{ entryTitle }}</h1>
   {% if subtitle %}<h2 class="mast__subtitle">{{ subtitle }}</h2>{% endif %}
 </div>

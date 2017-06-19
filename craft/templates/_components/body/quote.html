@@ -1,0 +1,7 @@
+<div class="blockquote">
+  <p>{{ block.quote | nl2br }}</p>
+
+  {% if block.citation %}
+    <p class="citation">{{ block.citation }}</p>
+  {% endif %}
+</div>

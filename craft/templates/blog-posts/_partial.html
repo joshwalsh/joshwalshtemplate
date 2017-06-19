@@ -1,0 +1,25 @@
+<div class="l-section l-section--divided article-list-item article-{{ article.type }}">
+  <div class="row">
+    <div class="col-9 push-3">
+        <h2 class="primary-headline">{{ article.link }}</h2>
+        <h3 class="byline">
+          <strong>By: {{ article.relatedAuthor.first.title }}</strong>
+          on {{article.postDate|date("M d, Y")}}
+        </h3>
+
+        {% include '_components/_body' with {
+          'inlineMast': article.featuredImage.first,
+          'excerpt': article.type == 'blogPosts',
+          'matrix': article.body
+        } %}
+
+        {% switch article.type %}
+          {% case "blogPosts" %}
+            <p><a href="{{ article.url }}" class="button">Continue Reading</a></p>
+          {% case "linkPosts" %}
+            <p><a href="{{ article.externalURL}}" class="button">Read Full Story</a></p>
+            <p class="fine-print">Source: {{ article.externalAuthor}} at {{ article.source }}</p>
+        {% endswitch %}
+    </div>
+  </div>
+</div>

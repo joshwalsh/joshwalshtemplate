@@ -3,26 +3,10 @@
 {% block content %}
 
 <div class="l-container">
-  {% for article in craft.entries.section('blogPosts').limit(5) %}
-    <div class="l-section l-section--divided">
-      <div class="row">
-        <div class="col-3">
-            <h3 class="byline">
-              <strong>{{ article.relatedAuthor.first.title }}</strong>
-              {{article.postDate|date("M d, Y")}}
-            </h3>
-        </div>
-        <div class="col-9">
-            <h2 class="primary-headline">{{ article.link }}</h2>
-
-            {% include '_components/_body' with {
-              'inlineMast': article.featuredImage.first,
-              'excerpt': true,
-              'matrix': article.body
-            } %}
-        </div>
-      </div>
-    </div>
+  {% for article in craft.entries.section('blogPosts').type('blogPosts').limit(5) %}
+    {% include 'blog-posts/_partial' with {
+      'article': article
+    } %}
   {% endfor %}
 </div>
 
