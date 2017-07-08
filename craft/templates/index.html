@@ -3,11 +3,16 @@
 {% block content %}
 
 <div class="l-container">
-  {% for article in craft.entries.section('blogPosts').limit(10) %}
+  {% paginate craft.entries.section('blogPosts').limit(10) as pageInfo, pageEntries %}
+  {% for article in pageEntries %}
     {% include 'blog-posts/_partial' with {
       'article': article
     } %}
   {% endfor %}
+
+  {% include '_includes/_paginate' with {
+    'pageInfo': pageInfo,
+  } %}
 </div>
 
 {% endblock %}

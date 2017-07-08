@@ -1116,6 +1116,33 @@ embed {
     background-color: #e0eaee;
     border-color: #275a72; }
 
+.paginate {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  margin: 48px 0;
+  padding: 48px 0; }
+  .paginate a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    margin-right: 0.5em;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    color: #555;
+    text-decoration: none; }
+    .paginate a:last-child {
+      margin-right: 0; }
+  .paginate .current {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    margin-right: 0.5em;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #3476af;
+    border-color: #3476af;
+    margin-bottom: 1em; }
+
 .pullquote {
   font-size: 1.25em;
   border-top: 1px solid #ddd;

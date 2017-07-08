@@ -1,0 +1,33 @@
+.paginate {
+  text-align: center;
+  border-top: 1px solid $default-border-color;
+  margin: $default-whitespace 0;
+  padding: $default-whitespace 0;
+
+  a {
+    display: inline-block;
+    padding: em(8px) em(16px);
+    border: 1px solid $default-border-color;
+    margin-right: em(8px);
+    border-radius: 4px;
+    margin-bottom: em(16px);
+    color: $default-text-color;
+    text-decoration: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .current {
+    display: inline-block;
+    padding: em(8px) em(16px);
+    border: 1px solid $default-border-color;
+    margin-right: em(8px);
+    border-radius: 4px;
+    font-weight: bold;
+    color: $link-color;
+    border-color: $link-color;
+    margin-bottom: em(16px);
+  }
+}
