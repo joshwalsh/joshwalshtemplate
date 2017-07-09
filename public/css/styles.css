@@ -986,17 +986,6 @@ embed {
     .list-horizontal > li:last-child {
       margin-right: 0; }
 
-.list-navigation {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  padding-right: 60px; }
-  .list-navigation > li {
-    display: inline-block;
-    margin-right: 48px; }
-    .list-navigation > li:last-child {
-      margin-right: 0; }
-
 .mast {
   background: #222;
   color: #fff;
@@ -1095,25 +1084,52 @@ embed {
   padding: 8px 0;
   font-family: "Lato", sans-serif;
   font-size: 0.75em;
-  z-index: 1; }
-  .navigation a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase; }
-    .navigation a:hover {
-      text-decoration: underline; }
-  .navigation__icons {
-    position: absolute;
-    list-style-type: none;
-    top: 0;
-    right: 0;
-    text-align: right;
-    margin: 0; }
-    .navigation__icons > li {
-      display: inline-block;
-      padding: 0;
-      margin: 0;
-      padding-left: 4px; }
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  box-sizing: border-box; }
+  .navigation__list {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    box-sizing: border-box; }
+    .navigation__list li {
+      float: left; }
+      .navigation__list li a {
+        display: inline-block;
+        padding: 1.83333em 1.83333em 1.83333em 0;
+        text-decoration: none;
+        font-weight: 700;
+        color: #ddd;
+        text-transform: uppercase; }
+        .navigation__list li a:hover {
+          color: #fff;
+          text-decoration: underline; }
+      .navigation__list li.navigation__icon {
+        float: right; }
+        @media screen and (max-width: 31.25em) {
+          .navigation__list li.navigation__icon {
+            display: none; } }
+        .navigation__list li.navigation__icon a {
+          padding: 1.33333em 1em; }
+          .navigation__list li.navigation__icon a:last-child {
+            padding-right: 0; }
+    .navigation__list:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0; }
 
 .notification {
   padding: 48px;
