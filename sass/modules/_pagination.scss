@@ -14,6 +14,10 @@
     color: $default-text-color;
     text-decoration: none;
 
+    &:hover {
+      background: lighten($link-color, 50%);
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -29,5 +33,6 @@
     color: $link-color;
     border-color: $link-color;
     margin-bottom: em(16px);
+    background: lighten($link-color, 50%);
   }
 }

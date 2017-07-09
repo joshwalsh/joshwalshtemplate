@@ -1,7 +1,9 @@
 {% set characters = 'a'..'z' %}
 
 <div class="paginate">
-{% for character in characters %}
-  <a href="/library/shelf/{{ character }}">{{ character | upper}}</a>
-{% endfor %}
+  <div class="section-headline">Find books that start with&hellip;</div>
+
+  {% for character in characters %}
+<a href="/library/shelf/{{ character }}" {% if currentLetter is defined and currentLetter == character %}class="current"{% endif %}>{{ character | upper}}</a>
+  {% endfor %}
 </div>

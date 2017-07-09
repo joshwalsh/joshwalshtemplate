@@ -9,20 +9,19 @@
   {% if not letter %}
     {% exit 404 %}
   {% endif %}
-  
+
   {% set books = craft.entries.section('books').title(letter~'*').order('title').limit(20) %}
 
   <h2 class="primary-headline txt-center">&ldquo;{{ letter | upper }}&rdquo; Books</h2>
-  {% include 'library/_alphaPicker' %}
 
   {% if not books|length %}
     <p>There are no books in my library that begin with &ldquo;{{ letter | upper}}.&rdquo;</p>
   {% endif %}
 
   {% paginate books as pageInfo, pageEntries %}
-  <div class="tile-container tile-container--four">
+  <div class="bookGallery">
     {% for entry in pageEntries %}
-      <div class="tile__item">
+      <div class="bookGallery__item">
         <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" /></a>
         <p>{{ entry.link }}<br>
           By: {{ entry.externalAuthor }}</p>
@@ -35,8 +34,14 @@
     {% endfor %}
   </div>
 
-  {% include '_includes/_paginate' with {
-    'pageInfo': pageInfo,
+  {% if books|length %}
+    {% include '_includes/_paginate' with {
+      'pageInfo': pageInfo,
+    } %}
+  {% endif %}
+
+  {% include 'library/_alphaPicker' with {
+    'currentLetter': letter
   } %}
 </div>
 
