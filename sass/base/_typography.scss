@@ -16,6 +16,10 @@
       border-bottom: 1px dashed #ccc;
     }
   }
+
+  @include respond-to(em(500px), max-width) {
+    font-size: em(30px, 16px);
+  }
 }
 
 .secondary-headline {

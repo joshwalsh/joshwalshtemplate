@@ -62,9 +62,8 @@
 
       @include respond-to(em(500px), max-width) {
         padding: 30% 5% em(5px) 5%;
-        font-size: 7vw;
+        font-size: 12vw;
       }
-
       @include respond-to(em(500px)) {
         padding: 25% 5% em(5px) 10%;
         font-size: 7vw;

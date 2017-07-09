@@ -1,30 +1,5 @@
 {% extends "_article" %}
 
-{% set seomaticMeta = {
-    seoTitle: entry.title,
-    seoDescription: entry.summary,
-    seoImage: entry.featuredImage.first.url,
-    canonicalUrl: entry.url,
-    twitter: {
-        card: seomaticMeta.twitter.card,
-        site: seomaticMeta.twitter.site,
-        creator: seomaticMeta.twitter.creator,
-        title: entry.title,
-        description: entry.summary,
-        image: entry.featuredImage.first.url
-    },
-    og: {
-        type: seomaticMeta.og.type,
-        locale: seomaticMeta.og.locale,
-        url: entry.url,
-        title: entry.title,
-        image: entry.featuredImage.first.url,
-        site_name: seomaticMeta.og.site_name,
-        description: entry.summary,
-        see_also: seomaticMeta.og.see_also
-    }
-} %}
-
 {% block content %}
 
 <div class="l-container article-{{ entry.type }}">

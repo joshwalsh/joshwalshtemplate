@@ -1,8 +1,8 @@
-{% if inlineMast %}
+{% if inlineMast is defined %}
   <img src="{{ inlineMast.getUrl('smallArticleMast') }}" class="inline-mast" >
 {% endif %}
 
-{% if excerpt == true %}
+{% if excerpt is defined %}
   {% set block = matrix.first %}
   {% include "_components/body/" ~ block.type %}
 {% else %}

@@ -1,0 +1,43 @@
+{% set entry = craft.entries.slug('library').first %}
+{% extends "_article" %}
+
+{% block content %}
+
+<div class="l-container">
+  {% set letter = slug is defined and slug|length == 1 and slug matches '/^[a-z]/i' ? slug %}
+
+  {% if not letter %}
+    {% exit 404 %}
+  {% endif %}
+  
+  {% set books = craft.entries.section('books').title(letter~'*').order('title').limit(20) %}
+
+  <h2 class="primary-headline txt-center">&ldquo;{{ letter | upper }}&rdquo; Books</h2>
+  {% include 'library/_alphaPicker' %}
+
+  {% if not books|length %}
+    <p>There are no books in my library that begin with &ldquo;{{ letter | upper}}.&rdquo;</p>
+  {% endif %}
+
+  {% paginate books as pageInfo, pageEntries %}
+  <div class="tile-container tile-container--four">
+    {% for entry in pageEntries %}
+      <div class="tile__item">
+        <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" /></a>
+        <p>{{ entry.link }}<br>
+          By: {{ entry.externalAuthor }}</p>
+
+        {% if entry.starRating != "-1" %}
+          <div><img src="/images/{{entry.starRating}}-star.png" alt="{{ entry.title }} rated {{entry.starRating}} stars" width="85" height="16"></div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </div>
+
+  {% include '_includes/_paginate' with {
+    'pageInfo': pageInfo,
+  } %}
+</div>
+
+{% endblock %}

@@ -5,9 +5,9 @@
 <div class="l-container">
 
   {% paginate craft.entries.section('books').order('title').limit(20) as pageInfo, pageEntries %}
-  <div class="tile-container tile-container--four">
+  <div class="bookGallery">
     {% for entry in pageEntries %}
-      <div class="tile__item">
+      <div class="bookGallery__item">
         <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" /></a>
         <p>{{ entry.link }}<br>
           By: {{ entry.externalAuthor }}</p>
@@ -21,7 +21,7 @@
   </div>
 
   {% include '_includes/_paginate' with {
-    'pageInfo': pageInfo,
+    'pageInfo': pageInfo
   } %}
 </div>
 

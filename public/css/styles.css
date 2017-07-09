@@ -444,6 +444,9 @@ embed {
     text-decoration: none; }
     .primary-headline a:hover {
       border-bottom: 1px dashed #ccc; }
+  @media screen and (max-width: 31.25em) {
+    .primary-headline {
+      font-size: 1.875em; } }
 
 .secondary-headline {
   font-family: "Merriweather", serif;
@@ -799,6 +802,27 @@ embed {
   background-size: 26px;
   padding-left: 30px; }
 
+.bookGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: -24px; }
+  .bookGallery__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    padding-left: 24px;
+    font-size: 0.875em; }
+    @media screen and (max-width: 31.25em) {
+      .bookGallery__item {
+        width: 50%; } }
+    @media screen and (min-width: 31.25em) {
+      .bookGallery__item {
+        width: 33.33333%; } }
+    @media screen and (min-width: 56.25em) {
+      .bookGallery__item {
+        width: 25%; } }
+
 .button {
   display: inline-block;
   margin: 0;
@@ -1026,7 +1050,7 @@ embed {
       @media screen and (max-width: 31.25em) {
         .mast-photo .mast__title {
           padding: 30% 5% 0.3125em 5%;
-          font-size: 7vw; } }
+          font-size: 12vw; } }
       @media screen and (min-width: 31.25em) {
         .mast-photo .mast__title {
           padding: 25% 5% 0.3125em 10%;
