@@ -10,7 +10,7 @@
 			{% set featuredimage = entry.featuredImage.first %}
 
 			{% include '_components/_featured-mast' with {
-        'featuredImageURL': featuredimage.url,
+        'featuredImage': featuredimage,
 				'entryTitle': entry.title,
 				'subtitle': entry.subtitle
       } %}

@@ -5,7 +5,7 @@
 <div class="l-container article-{{ entry.type }}">
   <div class="row">
     <div class="col-8 col-centered">
-      <h2 class="byline"><em>By</em> {{ entry.relatedAuthor.first.title }} <em>in</em> {{ entry.relatedTopic.first.title }} <em>on</em> {{entry.postDate|date("M d, Y")}}</h2>
+      <h2 class="byline"><em>By</em> {{ entry.relatedAuthor.first.title }} <em>on</em> {{entry.postDate|date("M d, Y")}}</h2>
 
       {% include '_components/_body' with {
         'matrix': entry.body
