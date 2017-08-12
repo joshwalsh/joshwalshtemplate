@@ -1,25 +1,32 @@
 <div class="l-section l-section--divided article-list-item article-{{ article.type }}">
   <div class="row">
     <div class="col-9 push-3">
-        <h2 class="primary-headline">{{ article.link }}</h2>
-        <h3 class="byline">
-          <strong>By: {{ article.relatedAuthor.first.title }}</strong>
-          on {{article.postDate|date("M d, Y")}}
-        </h3>
+        <h2 class="primary-headline">
+          <a href="{{ article.url }}">{{ article.title }} <span>{{ article.subtitle }}</span></a>
+        </h2>
 
-        {% include '_components/_body' with {
-          'inlineMast': article.featuredImage.first,
-          'excerpt': article.type == 'blogPosts',
-          'matrix': article.body
-        } %}
+        <div class="article">
+          <p class="byline">
+            <strong>By: {{ article.relatedAuthor.first.title }}</strong>
+            on {{article.postDate|date("M d, Y")}}
+          </p>
 
-        {% switch article.type %}
-          {% case "blogPosts" %}
-            <p><a href="{{ article.url }}" class="button">Continue Reading</a></p>
-          {% case "linkPosts" %}
-            <p><a href="{{ article.externalURL}}" class="button">Read Full Story</a></p>
-            <p class="fine-print">Source: {{ article.externalAuthor}} at {{ article.source }}</p>
-        {% endswitch %}
+          <div class="article__content">
+            {% include '_components/_body' with {
+              'inlineMast': article.featuredImage.first,
+              'excerpt': article.type == 'blogPosts',
+              'matrix': article.body
+            } %}
+          </div>
+
+          {% switch article.type %}
+            {% case "blogPosts" %}
+              <p><a href="{{ article.url }}" class="button">Continue Reading</a></p>
+            {% case "linkPosts" %}
+              <p><a href="{{ article.externalURL}}" class="button">Read Full Story</a></p>
+              <p class="fine-print">Source: {{ article.externalAuthor}} at {{ article.source }}</p>
+          {% endswitch %}
+        </div>
     </div>
   </div>
 </div>

@@ -3,7 +3,13 @@
 {% else %}
   <div class="mast">
 {% endif %}
-
-  <h1 class="mast__title">{{ entryTitle }}</h1>
-  {% if subtitle %}<h2 class="mast__subtitle">{{ subtitle }}</h2>{% endif %}
-</div>
+    <div class="l-container {% if readGuide is defined and readGuide == true %}read-guide{% endif %}">
+      <h1 class="mast__title">
+        {{ entryTitle }}
+        {% if subtitle %}<span class="mast__title-continuation">{{ subtitle }}</span>{% endif %}
+      </h1>
+      <hr class="mast__seperator">
+      {% if entry.relatedAuthor.first %}<p class="mast__byline">By <em>{{ entry.relatedAuthor.first.title }}</em> on {{entry.postDate|date("M d, Y")}}</p>{% endif %}
+      {% if entry.summary %}<div class="mast__summary">{{ entry.summary }}</div>{% endif %}
+    </div>
+  </div>

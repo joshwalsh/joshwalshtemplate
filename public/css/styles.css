@@ -385,7 +385,7 @@ html {
   font-size: 16px; }
 
 body {
-  font-family: "Merriweather", serif;
+  font-family: Alegreya, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
   font-size: 100%;
   line-height: 1.6;
   color: #555; }
@@ -427,11 +427,11 @@ embed {
 
 .primary-headline, .secondary-headline {
   margin-top: 0;
-  font-family: "Merriweather", serif;
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.2; }
 
 .primary-headline {
-  font-family: "Merriweather", serif;
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.625em;
   font-weight: 900;
   line-height: 1.25em;
@@ -449,10 +449,10 @@ embed {
       font-size: 1.875em; } }
 
 .secondary-headline {
-  font-family: "Merriweather", serif;
-  font-size: 1.5em;
-  font-weight: 900;
-  line-height: 1.375em;
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2.0625em;
+  font-weight: 400;
+  line-height: 1.1em;
   color: #333;
   margin: 1.6em 0 0 0;
   padding: 0; }
@@ -598,6 +598,10 @@ embed {
   .l-section--divided {
     padding-bottom: 48px;
     border-bottom: 1px solid #ccc; }
+
+.read-guide {
+  border-left: 8px solid rgba(0, 0, 0, 0.05);
+  padding-left: 40px; }
 
 .l-left {
   float: left; }
@@ -771,36 +775,29 @@ embed {
   margin-right: 1em;
   float: left; }
 
-.byline {
-  color: #000;
-  font-size: 0.875em;
-  font-weight: normal;
-  padding: 0em 0 1em 0;
-  margin: 0 0 1em 0;
-  font-family: "Lato", sans-serif; }
-  .byline strong {
-    font-size: 1.14286em; }
-    @media screen and (min-width: 43.75em) {
-      .byline strong {
-        display: block; } }
+.article__content {
+  font-size: 1.375em; }
+  .article__content ul, .article__content ol {
+    margin-left: 0;
+    padding-left: 0; }
+    .article__content ul li, .article__content ol li {
+      margin-bottom: 0.5em; }
 
 @media screen and (min-width: 43.75em) {
   .article-list-item {
-    position: relative; }
-    .article-list-item .byline {
-      position: absolute;
-      left: 0;
-      top: 0; } }
+    position: relative; } }
 
-.article-blogPosts .byline {
-  background: url(/images/blogPosts.svg) no-repeat left 10%;
-  background-size: 26px;
-  padding-left: 30px; }
-
-.article-linkPosts .byline {
-  background: url(/images/linkPosts.svg) no-repeat left 10%;
-  background-size: 26px;
-  padding-left: 30px; }
+.article-list-item .byline {
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: normal;
+  font-size: 0.875em; }
+  .article-list-item .byline strong {
+    display: block;
+    font-weight: 400;
+    font-size: 1.14286em; }
 
 .bookGallery {
   display: flex;
@@ -837,7 +834,8 @@ embed {
   color: #fff;
   background: #222;
   border-radius: 3px;
-  appearance: none; }
+  appearance: none;
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .button:hover, .button:focus {
     text-decoration: none;
     color: #fff;
@@ -949,8 +947,9 @@ embed {
 
 .footer {
   border-top: 1px solid #ddd;
-  margin-top: 2em;
-  padding-top: 1em; }
+  margin-top: 0;
+  padding-top: 1em;
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .footer__nav {
     margin-top: 0;
     padding-left: 0; }
@@ -990,36 +989,56 @@ embed {
   background: #222;
   color: #fff;
   width: 100%;
-  text-align: center;
   z-index: 1;
   position: relative;
-  margin-bottom: 2em;
-  padding-bottom: 1.375em; }
+  margin-bottom: 0;
+  padding-bottom: 0; }
   .mast__title {
     margin: 0;
-    font-weight: 900;
-    font-size: 2.5em;
-    padding-top: 1.25em;
-    line-height: 1.2;
-    z-index: 10;
-    position: relative; }
-  .mast__subtitle {
-    color: #efefef;
-    font-weight: normal;
-    font-size: 3vw;
+    font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 3.75em;
+    padding-top: 1.16667em;
+    line-height: 1.1em;
     z-index: 10;
     position: relative;
-    margin-bottom: 0;
-    margin-top: 0; }
-    @media screen and (max-width: 31.25em) {
-      .mast__subtitle {
-        padding: 0 15% 12% 15%;
-        line-height: 1.2;
-        font-size: 4vw; } }
-    @media screen and (min-width: 31.25em) {
-      .mast__subtitle {
-        padding: 0 5% 5% 5%;
-        line-height: 1.2; } }
+    text-transform: uppercase; }
+    .mast__title .mast__title-continuation {
+      display: block;
+      color: #efefef;
+      font-weight: 400;
+      font-size: 0.66667em;
+      z-index: 10;
+      position: relative;
+      margin-bottom: 0;
+      margin-top: 0;
+      line-height: 1em; }
+  .mast .read-guide {
+    border-left-color: rgba(0, 0, 0, 0.5); }
+  .mast__byline {
+    position: relative;
+    font-size: 1.25em;
+    color: #fff;
+    z-index: 10;
+    margin-bottom: 2.1875em; }
+  .mast__summary {
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    font-size: 1.5em;
+    padding-bottom: 1.66667em; }
+  .mast__seperator {
+    display: block;
+    position: relative;
+    text-align: left;
+    border: 0;
+    padding: 0;
+    height: 6px;
+    width: 235px;
+    max-width: 235px;
+    margin: 0.625em 0 1.25em 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10; }
   .mast-photo {
     background: #eee;
     background-size: cover;
@@ -1034,19 +1053,6 @@ embed {
       left: 0;
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
       z-index: 5; }
-    .mast-photo .mast__title {
-      font-size: 5vw; }
-      @media screen and (max-width: 31.25em) {
-        .mast-photo .mast__title {
-          padding: 30% 5% 0.3125em 5%;
-          font-size: 12vw; } }
-      @media screen and (min-width: 31.25em) {
-        .mast-photo .mast__title {
-          padding: 25% 5% 0.3125em 10%;
-          font-size: 7vw; } }
-      @media screen and (min-width: 50em) {
-        .mast-photo .mast__title {
-          padding: 20% 5% 0.3125em 10%; } }
 
 .media {
   display: flex;
@@ -1082,7 +1088,7 @@ embed {
 .navigation {
   background-color: #222;
   padding: 8px 0;
-  font-family: "Lato", sans-serif;
+  font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.75em;
   z-index: 1;
   margin: 0;
