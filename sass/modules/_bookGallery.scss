@@ -16,6 +16,10 @@
     padding-left: $condensed-whitespace;
     font-size: em(14px);
 
+    .bookGallery__item__cover {
+      min-width: 100%;
+    }
+
     @include respond-to(em(500px), max-width) {
       width: percentage(1 / 2);
     }

@@ -8,14 +8,7 @@
   <div class="bookGallery">
     {% for entry in pageEntries %}
       <div class="bookGallery__item">
-        <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" /></a>
-        <p>{{ entry.link }}<br>
-          By: {{ entry.externalAuthor }}</p>
-
-        {% if entry.starRating != "-1" %}
-          <div><img src="/images/{{entry.starRating}}-star.png" alt="{{ entry.title }} rated {{entry.starRating}} stars" width="85" height="16"></div>
-        {% endif %}
-
+        <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" class="bookGallery__item__cover" /></a>
       </div>
     {% endfor %}
   </div>

@@ -16,15 +16,16 @@
     <div class="col-3 txt-center">
       <img src="{{ entry.bookCover.first.url }}" />
 
+      {% if entry.starRating != "-1" %}
+        <div class="txt-center"><img src="/images/{{entry.starRating}}-star.png" alt="{{ entry.title }} rated {{entry.starRating}} stars" width="170" height="32"></div>
+      {% endif %}
+
       <p><a href="{{ entry.externalURL}}" class="button" target="_blank">View on Amazon.com</a></p>
     </div>
     <div class="push-1 col-8">
-      {% if entry.starRating != "-1" %}
-        <div class="txt-center"><img src="/images/{{entry.starRating}}-star.png" alt="{{ entry.title }} rated {{entry.starRating}} stars" width="170" height="32"></div>
-        <hr>
-      {% endif %}
-
+      <h2 class="secondary-headline">Editors Summary:</h2>
       {{ entry.summary }}
+
     </div>
   </div>
 </div>
