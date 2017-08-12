@@ -456,6 +456,9 @@ embed {
   color: #333;
   margin: 1.6em 0 0 0;
   padding: 0; }
+  @media screen and (max-width: 43.75em) {
+    .secondary-headline {
+      font-size: 1.375em; } }
 
 .section-headline {
   font-size: 1em;
@@ -602,6 +605,10 @@ embed {
 .read-guide {
   border-left: 8px solid rgba(0, 0, 0, 0.05);
   padding-left: 40px; }
+  @media screen and (max-width: 43.75em) {
+    .read-guide {
+      border-left: 0;
+      padding-left: 0; } }
 
 .l-left {
   float: left; }
@@ -777,11 +784,13 @@ embed {
 
 .article__content {
   font-size: 1.375em; }
-  .article__content ul, .article__content ol {
-    margin-left: 0;
-    padding-left: 0; }
-    .article__content ul li, .article__content ol li {
-      margin-bottom: 0.5em; }
+  .article__content ul li, .article__content ol li {
+    margin-bottom: 0.5em; }
+  .article__content p {
+    position: relative; }
+  @media screen and (max-width: 43.75em) {
+    .article__content {
+      font-size: 1.125em; } }
 
 @media screen and (min-width: 43.75em) {
   .article-list-item {
@@ -798,6 +807,11 @@ embed {
     display: block;
     font-weight: 400;
     font-size: 1.14286em; }
+  @media screen and (max-width: 43.75em) {
+    .article-list-item .byline {
+      position: relative; }
+      .article-list-item .byline strong {
+        display: inline; } }
 
 .bookGallery {
   display: flex;
@@ -1039,6 +1053,16 @@ embed {
     margin: 0.625em 0 1.25em 0;
     background: rgba(255, 255, 255, 0.2);
     z-index: 10; }
+  @media screen and (max-width: 43.75em) {
+    .mast__title {
+      font-size: 2.75em; }
+      .mast__title .mast__title-continuation {
+        font-size: 0.59091em; }
+    .mast__summary {
+      font-size: 1.125em; }
+    .mast .read-guide {
+      border-left: 0;
+      padding-left: 0; } }
   .mast-photo {
     background: #eee;
     background-size: cover;

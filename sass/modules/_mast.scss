@@ -65,6 +65,25 @@
     z-index: 10;
   }
 
+  @include respond-to(em(700px), max-width) {
+    &__title {
+      font-size: em(44px);
+
+      .mast__title-continuation {
+        font-size: em(26px, 44px);
+      }
+    }
+
+    &__summary {
+      font-size: em(18px);
+    }
+
+    .read-guide {
+      border-left: 0;
+      padding-left: 0;
+    }
+  }
+
   &-photo {
     background: #eee;
     background-size: cover;

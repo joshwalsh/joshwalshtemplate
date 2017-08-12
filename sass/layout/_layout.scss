@@ -24,6 +24,11 @@
 .read-guide {
   border-left: 8px solid rgba(0,0,0,0.05);
   padding-left: 40px;
+
+  @include respond-to(em(700px), max-width) {
+    border-left: 0;
+    padding-left: 0;
+  }
 }
 
 // Layout helpers

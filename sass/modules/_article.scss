@@ -9,12 +9,17 @@
     font-size: em(22px);
 
     ul, ol {
-      margin-left: 0;
-      padding-left: 0;
-
       li {
         margin-bottom: 0.5em;
       }
+    }
+    
+    p {
+      position: relative;
+    }
+
+    @include respond-to(em(700px), max-width) {
+      font-size: em(18px);
     }
   }
 }
@@ -36,6 +41,14 @@
       display: block;
       font-weight: 400;
       font-size: em(16px, 14px);
+    }
+
+    @include respond-to(em(700px), max-width) {
+      position: relative;
+
+      strong {
+        display: inline;
+      }
     }
   }
 }

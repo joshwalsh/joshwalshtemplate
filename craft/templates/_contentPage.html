@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+{% include "_includes/_html-head" %}
+
+<body>
+	<div id="container">
+		{% include '_includes/_navigation' %}
+
+		<main id="content" role="main">
+			{% set featuredimage = entry.featuredImage.first %}
+
+			{% include '_components/_featured-mast' with {
+        'featuredImage': featuredimage,
+				'entryTitle': entry.title,
+				'subtitle': entry.subtitle,
+				'readGuide': true
+      } %}
+
+			{% block content %}
+
+			{% endblock %}
+		</main>
+
+		{% include "_includes/_footer" %}
+	</div>
+</body>
+</html>

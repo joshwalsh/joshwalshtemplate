@@ -1,14 +1,10 @@
-{% extends "_page" %}
+{% extends "_contentPage" %}
 
 {% block content %}
 
-<div class="l-container">
+<div class="l-container article read-guide">
   <div class="row">
-    <div class="col-8 col-centered">
-      {% if entry.relatedAuthor.first %}
-        <h3 class="byline"><em>By</em> {{ entry.relatedAuthor.first.title }} <em>in</em> {{ entry.relatedTopic.first.title }} <em>on</em> {{entry.postDate|date("M d, Y")}}</h3>
-      {% endif %}
-
+    <div class="col-9 article__content">
       {% include '_components/_body' with {
         'matrix': entry.body
       } %}
