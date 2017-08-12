@@ -1,15 +1,15 @@
-{% if featuredImage %}
+{% if featuredImage is defined and featuredImage is not null %}
   <div class="mast mast-photo" style="background-image: url({{featuredImage.url}})">
 {% else %}
   <div class="mast">
 {% endif %}
-    <div class="l-container {% if readGuide is defined and readGuide == true %}read-guide{% endif %}">
+    <div class="l-container {% if readGuide is defined %}read-guide{% endif %}">
       <h1 class="mast__title">
         {{ entryTitle }}
-        {% if subtitle %}<span class="mast__title-continuation">{{ subtitle }}</span>{% endif %}
+        {% if subtitle is defined %}<span class="mast__title-continuation">{{ subtitle }}</span>{% endif %}
       </h1>
       <hr class="mast__seperator">
-      {% if entry.relatedAuthor.first %}<p class="mast__byline">By <em>{{ entry.relatedAuthor.first.title }}</em> on {{entry.postDate|date("M d, Y")}}</p>{% endif %}
-      {% if entry.summary %}<div class="mast__summary">{{ entry.summary }}</div>{% endif %}
+      {% if author is defined %}<p class="mast__byline">By <em>{{ author.title }}</em> on {{entry.postDate|date("M d, Y")}}</p>{% endif %}
+      {% if summary is defined %}<div class="mast__summary">{{ summary }}</div>{% endif %}
     </div>
   </div>

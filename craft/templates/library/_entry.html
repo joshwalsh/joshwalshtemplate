@@ -8,7 +8,7 @@
 {% include '_components/_featured-mast' with {
   'featuredImageURL': featuredimage.url,
   'entryTitle': entry.title,
-  'subtitle': entry.externalAuthor
+  'subtitle': "By: " ~ entry.externalAuthor
 } %}
 
 <div class="l-container">
