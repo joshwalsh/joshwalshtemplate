@@ -1,18 +1,102 @@
-{% extends "_structurePage" %}
+{% extends "_layout" %}
 
 {% block content %}
 
-<div class="l-container">
-  {% paginate craft.entries.section('blogPosts').limit(10) as pageInfo, pageEntries %}
-  {% for article in pageEntries %}
-    {% include 'blog-posts/_partial' with {
-      'article': article
-    } %}
-  {% endfor %}
+{% set featuredImage = entry.featuredImage.first %}
 
-  {% include '_includes/_paginate' with {
-    'pageInfo': pageInfo,
-  } %}
+<div class="mast mast-home" style="background-image: url({{featuredImage.url}})">
+  <div class="l-container">
+    <h1 class="mast__title">
+      {{ entry.title }}
+      {% if entry.subtitle is defined %}<span class="mast__title-continuation">{{ entry.subtitle }}</span>{% endif %}
+    </h1>
+  </div>
+</div>
+
+<div class="l-section l-section--dark feature">
+  <div class="l-container">
+    <h2 class="secondary-headline">Is your business running you, or are you running your business?</h2>
+    <p><strong>Welcome to my playbook.</strong>  It's full of the lessons I've learned running my business for the last 16 years -- a multi-million dollar business I grew from a $1,000 investment and no outside capital.</p>
+  </div>
+</div>
+
+<div class="l-section l-section--spaced">
+  <div class="l-container">
+    <div class="l-section__headline txt-center">
+      <h2 class="secondary-headline">Start Here</h2>
+      <p>Your business will grow if you keep each of these components strategically sound, and operationally efficient.</p>
+    </div>
+
+    <div class="categoryTiles-container">
+      {% for topic in craft.categories.group('topics') %}
+        <div class="categoryTiles__item">
+          <a href="{{ topic.url }}" class="category" style="background: {{ topic.color }};">
+            {% if topic.icon.first %}
+              <img src="{{ topic.icon.first.url }}">
+            {% endif %}
+
+            <span class="category__title">{{ topic.title }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="l-section l-section--dark l-section--min-spaced">
+  <div class="l-container txt-center">
+    <h2 class="secondary-headline">Join the Community</h2>
+    <p>Join our community of thousands of other entrepreneurs.</p>
+
+    {% include '_includes/_subscribeForm' %}
+  </div>
+</div>
+
+<div class="l-section l-section--spaced l-section--divided">
+  <div class="l-container">
+    <div class="l-section__headline txt-center">
+      <h2 class="secondary-headline">Recent Posts</h2>
+    </div>
+
+    <div class="postTiles-container">
+      {% for article in craft.entries.section('blogPosts').type('blogPosts').limit(4) %}
+        <div class="postTiles__item">
+          <a href="{{ article.url }}" class="post" style="background-image: url('{{ article.featuredImage.first.url }}');">
+            <span class="post__title">
+              {{ article.title }}
+              {% if article.subtitle is defined %}<span class="post__title-continued">{{ article.subtitle }}</span>{% endif %}
+            </span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <p class="txt-center"><a href="/recent-posts" class="button button--pill">View More Recent Posts</a></p>
+  </div>
+</div>
+
+<div class="l-section l-section--spaced">
+  <div class="l-container">
+    {% set book = craft.entries.section('books').limit(1).order('postDate DESC').first %}
+
+    <div class="row">
+      <div class="col-8 article">
+        <div class="article__content">
+          <h2 class="secondary-headline">Book I'm Currently Reading</h2>
+          {{ book.summary }}
+        </div>
+      </div>
+      <div class="push-1 col-3 txt-center">
+        <img src="{{ book.bookCover.first.url }}" />
+
+        {% if book.starRating != "-1" %}
+          <div class="txt-center"><img src="/images/{{book.starRating}}-star.png" alt="{{ book.title }} rated {{book.starRating}} stars" width="170" height="32"></div>
+        {% endif %}
+
+        <p><a href="{{ book.externalURL}}" class="button button--full" target="_blank">View on Amazon.com</a></p>
+        <p><a href="/library" class="button button--full button--pill">Browse My Library</a></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

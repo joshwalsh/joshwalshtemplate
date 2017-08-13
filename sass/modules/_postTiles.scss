@@ -1,0 +1,65 @@
+// TILE STYLES
+// ---------------
+
+.postTiles {
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Change this property to fit the needs of the design
+    // For example, use 'space-around' to evenly distrubute
+    // the tiles in the container.
+    justify-content: flex-start;
+
+    margin-left: -$condensed-whitespace;
+    margin-bottom: em(80px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column; // Fixes a display issue in IE10
+    margin-bottom: $condensed-whitespace * 3;
+    width: 100%;
+
+    .post {
+      font-size: em(24px);
+      margin-right: em(12px, 24px);
+      margin-left: em(12px, 24px);
+      color: #fff;
+      font-family: $sans-serif-font;
+      font-weight: 700;
+      text-decoration: none;
+      transition:all 0.3s ease;
+      min-height: 225px;
+      position: relative;
+      background-size: cover;
+      background-position: 50% 0%;
+      background-repeat: no-repeat;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .post__title {
+        display: block;
+        background: rgba(0,0,0,0.6);
+        padding: em(24px, 24px);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        text-transform: uppercase;
+
+        .post__title-continued {
+          display: block;
+          font-weight: 400;
+          font-size: em(18px, 24px);
+        }
+      }
+    }
+
+    @include respond-to(em(700px)) {
+      width: percentage(1 / 2);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+// TILE STYLES
+// ---------------
+
+.categoryTiles {
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Change this property to fit the needs of the design
+    // For example, use 'space-around' to evenly distrubute
+    // the tiles in the container.
+    justify-content: flex-start;
+
+    margin-left: -$condensed-whitespace;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column; // Fixes a display issue in IE10
+    margin-bottom: $condensed-whitespace * 3;
+
+    .category {
+      font-size: em(24px);
+      margin-right: em(12px, 24px);
+      margin-left: em(12px, 24px);
+      border-radius: 8px;
+      text-align: center;
+      display: block;
+      color: #fff;
+      font-family: $sans-serif-font;
+      font-weight: 700;
+      padding: em(24px, 24px);
+      text-decoration: none;
+      transition:all 0.3s ease;
+      flex: 1 0 auto;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .category__title {
+        display: block;
+      }
+    }
+
+    @include respond-to(em(700px)) {
+      width: percentage(1 / 3);
+    }
+  }
+}

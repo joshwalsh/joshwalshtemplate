@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="l-container">
-  {% paginate craft.entries.section('blogPosts').type('blogPosts').limit(10) as pageInfo, pageEntries %}
+  {% paginate craft.entries.section('blogPosts').limit(10) as pageInfo, pageEntries %}
   {% for article in pageEntries %}
     {% include 'blog-posts/_partial' with {
       'article': article

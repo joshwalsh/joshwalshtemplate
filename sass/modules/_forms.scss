@@ -3,6 +3,10 @@
 
 // Horizontal form
 
+form, input {
+  font-family: $sans-serif-font;
+}
+
 .form-horizontal {
   input[type="color"],
   input[type="date"],
@@ -21,6 +25,14 @@
   textarea,
   select {
     margin-right: $condensed-whitespace;
+    min-width: 250px;
+
+    @include respond-to(em(700px), max-width) {
+      display: block;
+      margin-bottom: $default-whitespace;
+      margin-right: 0;
+      min-width: 100%;
+    }
   }
 }
 
