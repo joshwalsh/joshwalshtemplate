@@ -76,7 +76,7 @@
 
 <div class="l-section l-section--spaced">
   <div class="l-container">
-    {% set book = craft.entries.section('books').limit(1).order('postDate DESC').first %}
+    {% set book = entry.currentBook.first %}
 
     <div class="row">
       <div class="col-8 article">
