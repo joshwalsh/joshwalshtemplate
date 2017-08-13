@@ -2,22 +2,23 @@
 
 {% block content %}
 
-<div class="l-container">
+<div class="l-section l-section--min-spacing">
+  <div class="l-container">
+    {% paginate craft.entries.section('books').order('title').limit(20) as pageInfo, pageEntries %}
+    <div class="bookGallery">
+      {% for entry in pageEntries %}
+        <div class="bookGallery__item">
+          <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" class="bookGallery__item__cover" /></a>
+        </div>
+      {% endfor %}
+    </div>
 
-  {% paginate craft.entries.section('books').order('title').limit(20) as pageInfo, pageEntries %}
-  <div class="bookGallery">
-    {% for entry in pageEntries %}
-      <div class="bookGallery__item">
-        <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" class="bookGallery__item__cover" /></a>
-      </div>
-    {% endfor %}
+    {% include '_includes/_paginate' with {
+      'pageInfo': pageInfo
+    } %}
+
+    {% include 'library/_alphaPicker' %}
   </div>
-
-  {% include '_includes/_paginate' with {
-    'pageInfo': pageInfo
-  } %}
-
-  {% include 'library/_alphaPicker' %}
 </div>
 
 {% endblock %}
