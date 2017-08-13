@@ -17,10 +17,43 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "404" %}
+{% set title = "404 - Page Not Found" %}
 
 {% block content %}
-	<h1>Page not found</h1>
+<div class="mast">
+  <div class="l-container">
+    <h1 class="mast__title">
+      Page Missing
+    </h1>
 
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+    <div class="mast__summary">
+      <p>The page you are looking for is no longer here...</p>
+    </div>
+  </div>
+</div>
+
+<div class="l-section l-section--spaced">
+  <div class="l-container">
+    <div class="l-section__headline txt-center">
+      <h2 class="secondary-headline">Try looking here&hellip;</h2>
+      <p>Our most important content is found in one of these tracks.</p>
+    </div>
+
+    <div class="categoryTiles-container">
+      {% for topic in craft.categories.group('topics') %}
+        <div class="categoryTiles__item">
+          <a href="{{ topic.url }}" class="category" style="background: {{ topic.color }};">
+            {% if topic.icon.first %}
+              <img src="{{ topic.icon.first.url }}">
+            {% endif %}
+
+            <span class="category__title">{{ topic.title }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}

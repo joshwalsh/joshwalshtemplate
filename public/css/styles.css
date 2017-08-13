@@ -909,14 +909,14 @@ embed {
 .categoryTiles-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: flex-start;
   margin-left: -8px; }
 
 .categoryTiles__item {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 24px;
-  flex: 1; }
+  min-width: 250px;
+  flex: 1;
+  margin-bottom: 24px; }
   .categoryTiles__item .category {
     font-size: 1.25em;
     margin-right: 0.6em;
@@ -929,8 +929,7 @@ embed {
     font-weight: 700;
     padding: 1em;
     text-decoration: none;
-    transition: all 0.3s ease;
-    flex: 1 0 auto; }
+    transition: all 0.3s ease; }
     .categoryTiles__item .category:hover {
       transform: scale(1.05); }
     .categoryTiles__item .category .category__title {
