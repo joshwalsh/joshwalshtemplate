@@ -18,11 +18,12 @@
     display: flex;
     flex-direction: column; // Fixes a display issue in IE10
     margin-bottom: $condensed-whitespace * 3;
+    flex: 1;
 
     .category {
-      font-size: em(24px);
-      margin-right: em(12px, 24px);
-      margin-left: em(12px, 24px);
+      font-size: em(20px);
+      margin-right: em(12px, 20px);
+      margin-left: em(12px, 20px);
       border-radius: 8px;
       text-align: center;
       display: block;
@@ -41,10 +42,6 @@
       .category__title {
         display: block;
       }
-    }
-
-    @include respond-to(em(700px)) {
-      width: percentage(1 / 3);
     }
   }
 }

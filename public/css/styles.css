@@ -454,7 +454,7 @@ embed {
   font-weight: 400;
   line-height: 1.1em;
   color: #333;
-  margin: 1.6em 0 0 0;
+  margin: 1.6em 0 0.5em 0;
   padding: 0; }
   @media screen and (max-width: 43.75em) {
     .secondary-headline {
@@ -493,6 +493,9 @@ embed {
 
 .txt-justify {
   text-align: justify; }
+
+.relative {
+  position: relative; }
 
 .ptn, .pvn, .pan {
   padding-top: 0 !important; }
@@ -806,6 +809,9 @@ embed {
     margin-bottom: 0.5em; }
   .article__content p {
     position: relative; }
+  .article__content h2:first-of-type {
+    padding-top: 0;
+    margin-top: 0; }
   @media screen and (max-width: 43.75em) {
     .article__content {
       font-size: 1.125em; } }
@@ -839,8 +845,8 @@ embed {
   .bookGallery__item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
-    padding-left: 8px;
+    margin-bottom: 24px;
+    padding-left: 24px;
     font-size: 0.875em; }
     .bookGallery__item .bookGallery__item__cover {
       min-width: 100%; }
@@ -909,11 +915,12 @@ embed {
 .categoryTiles__item {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  flex: 1; }
   .categoryTiles__item .category {
-    font-size: 1.5em;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
+    font-size: 1.25em;
+    margin-right: 0.6em;
+    margin-left: 0.6em;
     border-radius: 8px;
     text-align: center;
     display: block;
@@ -928,9 +935,6 @@ embed {
       transform: scale(1.05); }
     .categoryTiles__item .category .category__title {
       display: block; }
-  @media screen and (min-width: 43.75em) {
-    .categoryTiles__item {
-      width: 33.33333%; } }
 
 .embed {
   position: relative;
@@ -1167,7 +1171,7 @@ form, input {
       height: 100%;
       top: 0;
       left: 0;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
       z-index: 5; }
   .mast-home {
     background: #fff;
@@ -1303,7 +1307,6 @@ form, input {
 
 .paginate {
   text-align: center;
-  border-top: 1px solid #ccc;
   margin: 16px 0;
   padding: 16px 0;
   font-family: Ubuntu, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif; }

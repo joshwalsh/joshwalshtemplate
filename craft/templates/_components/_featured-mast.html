@@ -1,7 +1,7 @@
 {% if featuredImage is defined and featuredImage is not null %}
   <div class="mast mast-photo" style="background-image: url({{featuredImage.url}})">
 {% else %}
-  <div class="mast">
+  <div class="mast" {% if color is defined %} style="background-color: {{ color }};" {% endif %}>
 {% endif %}
     <div class="l-container {% if readGuide is defined %}read-guide{% endif %}">
       <h1 class="mast__title">
@@ -9,7 +9,7 @@
         {% if subtitle is defined %}<span class="mast__title-continuation">{{ subtitle }}</span>{% endif %}
       </h1>
       <hr class="mast__seperator">
-      {% if author is defined %}<p class="mast__byline">By <em>{{ author.title }}</em> on {{entry.postDate|date("M d, Y")}}</p>{% endif %}
-      {% if summary is defined %}<div class="mast__summary">{{ summary }}</div>{% endif %}
+      {% if author is defined and author is not null %}<p class="mast__byline">By <em>{{ author.title }}</em> on {{entry.postDate|date("M d, Y")}}</p>{% endif %}
+      {% if summary is defined and summary is not null %}<div class="mast__summary">{{ summary }}</div>{% endif %}
     </div>
   </div>

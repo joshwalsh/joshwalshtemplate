@@ -12,8 +12,8 @@
   &__item {
     display: flex;
     flex-direction: column; // Fixes a display issue in IE10
-    margin-bottom: $condensed-whitespace;
-    padding-left: $condensed-whitespace;
+    margin-bottom: $condensed-whitespace * 3;
+    padding-left: $condensed-whitespace * 3;
     font-size: em(14px);
 
     .bookGallery__item__cover {
