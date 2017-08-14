@@ -1,3 +1,4 @@
+{% if pageInfo.totalPages > 1 %}
 <div class="paginate">
   <a href="{{ pageInfo.firstUrl }}">First Page</a>
   {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" rel="prev">Previous Page</a>{% endif %}
@@ -15,3 +16,4 @@
   {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" rel="next">Next Page</a>{% endif %}
   <a href="{{ pageInfo.lastUrl }}">Last Page</a>
 </div>
+{% endif %}

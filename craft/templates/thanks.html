@@ -1,0 +1,42 @@
+{% extends "_layout" %}
+{% set title = "Thanks for Subscribing" %}
+
+{% block content %}
+<div class="mast">
+  <div class="l-container">
+    <h1 class="mast__title">
+      Welcome
+      <span class="mast__title-continuation">to our community</span>
+    </h1>
+
+    <div class="mast__summary">
+      <p>We're glad to have you among our members, and I look forward to working with you on your business.</p>
+    </div>
+  </div>
+</div>
+
+<div class="l-section l-section--spaced">
+  <div class="l-container">
+    <div class="l-section__headline txt-center">
+      <h2 class="secondary-headline">Here's a great place to get started&hellip;</h2>
+      <p>Our most important content is found in one of these tracks.</p>
+    </div>
+
+    <div class="categoryTiles-container">
+      {% for topic in craft.categories.group('topics') %}
+        <div class="categoryTiles__item">
+          <a href="{{ topic.url }}" class="category" style="background: {{ topic.color }};">
+            {% if topic.icon.first %}
+              <img src="{{ topic.icon.first.url }}">
+            {% endif %}
+
+            <span class="category__title">{{ topic.title }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

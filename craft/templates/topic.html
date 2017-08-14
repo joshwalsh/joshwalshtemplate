@@ -3,15 +3,25 @@
 
 <div class="l-container">
   {% paginate craft.entries.section('blogPosts').relatedTo(category).limit(10) as pageInfo, pageEntries %}
-  {% for article in pageEntries %}
-    {% include 'blog-posts/_partial' with {
-      'article': article
-    } %}
-  {% endfor %}
 
-  {% include '_includes/_paginate' with {
-    'pageInfo': pageInfo,
-  } %}
+  {% if pageEntries | length > 0 %}
+    {% for article in pageEntries %}
+      {% include 'blog-posts/_partial' with {
+        'article': article
+      } %}
+    {% endfor %}
+
+    {% include '_includes/_paginate' with {
+      'pageInfo': pageInfo,
+    } %}
+  {% else %}
+    <div class="article">
+      <div class="article__content">
+        <p>Nothing has been written yet in this topic.</p>
+      </div>
+    </div>
+
+  {% endif %}
 </div>
 
 {% endblock %}
