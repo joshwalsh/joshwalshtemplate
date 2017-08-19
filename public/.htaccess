@@ -1,5 +1,11 @@
+# Use PHP7 as default
+AddHandler application/x-httpd-php70 .php
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+
+	RewriteCond %{HTTP_HOST} ^joshwalsh.com$ [NC]
+	RewriteRule (.*) http://www.joshwalsh.com/$1 [R=301,L]
 
 	# Send would-be 404 requests to Craft
 	RewriteCond %{REQUEST_FILENAME} !-f
