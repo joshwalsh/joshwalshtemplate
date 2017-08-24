@@ -16,11 +16,6 @@
   padding-top: $default-whitespace * 3;
   padding-bottom: $default-whitespace * 3;
 
-  h2:first-of-type {
-    padding-top: 0;
-    margin-top: 0;
-  }
-
   &--divided {
     padding-bottom: $default-whitespace;
     border-bottom: 1px solid $default-border-color;

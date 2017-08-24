@@ -602,9 +602,6 @@ embed {
 .l-section {
   padding-top: 48px;
   padding-bottom: 48px; }
-  .l-section h2:first-of-type {
-    padding-top: 0;
-    margin-top: 0; }
   .l-section--divided {
     padding-bottom: 16px;
     border-bottom: 1px solid #ccc; }
@@ -809,9 +806,6 @@ embed {
     margin-bottom: 0.5em; }
   .article__content p {
     position: relative; }
-  .article__content h2:first-of-type {
-    padding-top: 0;
-    margin-top: 0; }
   @media screen and (max-width: 43.75em) {
     .article__content {
       font-size: 1.125em; } }
