@@ -15,7 +15,8 @@
 				'subtitle': entry.subtitle,
 				'author': entry.relatedAuthor.first,
 				'summary': entry.summary,
-				'readGuide': true
+				'readGuide': true,
+				'color': (entry.relatedTopic.last) ? entry.relatedTopic.last.color : ''
       } %}
 
 			{% block content %}

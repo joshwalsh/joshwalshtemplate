@@ -1116,7 +1116,7 @@ form, input {
       margin-top: 0;
       line-height: 1.2em; }
   .mast .read-guide {
-    border-left-color: rgba(0, 0, 0, 0.5); }
+    border-left-color: rgba(0, 0, 0, 0.3); }
   .mast__byline {
     position: relative;
     font-size: 1.25em;

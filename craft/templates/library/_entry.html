@@ -8,7 +8,8 @@
 {% include '_components/_featured-mast' with {
   'featuredImageURL': featuredimage.url,
   'entryTitle': entry.title,
-  'subtitle': "By: " ~ entry.externalAuthor
+  'subtitle': "By: " ~ entry.externalAuthor,
+  'color': (entry.relatedTopic.last) ? entry.relatedTopic.last.color : ''
 } %}
 
 <div class="l-section l-section--min-spaced">
@@ -21,11 +22,7 @@
           <div class="txt-center"><img src="/images/{{entry.starRating}}-star.png" alt="{{ entry.title }} rated {{entry.starRating}} stars" width="170" height="32"></div>
         {% endif %}
 
-        {% if entry.amazonAsin %}
-          {% set amazonURL = "http://www.amazon.com/gp/product/" ~ entry.amazonAsin ~ "/?tag=joshwalsh-20" %}
-        {% else %}
-          {% set amazonURL = entry.externalURL %}
-        {% endif %}
+        {% set amazonURL = "http://www.amazon.com/gp/product/" ~ entry.amazonAsin ~ "/?tag=joshwalsh-20" %}
         <p><a href="{{ amazonURL }}" class="button" target="_blank">View on Amazon.com</a></p>
       </div>
       <div class="push-1 col-8 article">

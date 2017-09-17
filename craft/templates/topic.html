@@ -1,27 +1,49 @@
 {% extends "_categoryPage" %}
 {% block content %}
 
-<div class="l-container">
-  {% paginate craft.entries.section('blogPosts').relatedTo(category).limit(10) as pageInfo, pageEntries %}
+<div class="l-section">
+  <div class="l-container">
+    {% paginate craft.entries.section('blogPosts').relatedTo(category).limit(10) as pageInfo, pageEntries %}
 
-  {% if pageEntries | length > 0 %}
-    {% for article in pageEntries %}
-      {% include 'blog-posts/_partial' with {
-        'article': article
+    {% if pageEntries | length > 0 %}
+      {% for article in pageEntries %}
+        {% include 'blog-posts/_partial' with {
+          'article': article
+        } %}
+      {% endfor %}
+
+      {% include '_includes/_paginate' with {
+        'pageInfo': pageInfo,
       } %}
-    {% endfor %}
-
-    {% include '_includes/_paginate' with {
-      'pageInfo': pageInfo,
-    } %}
-  {% else %}
-    <div class="article">
-      <div class="article__content">
-        <p>Nothing has been written yet in this topic.</p>
+    {% else %}
+      <div class="article">
+        <div class="article__content">
+          <p>Nothing has been written yet in this topic.</p>
+        </div>
       </div>
-    </div>
-
-  {% endif %}
+    {% endif %}
+  </div>
 </div>
+
+{% set featuredBooks = craft.entries.section('books').relatedTo(category).order('starRating').limit(4) %}
+{% if featuredBooks | length > 0 %}
+  <div class="l-section l-section--spaced-min">
+    <div class="l-container">
+      <div class="l-section__headline txt-center">
+        <h2 class="secondary-headline mtn ptn">Books to Help You {{ category.title }}</h2>
+      </div>
+
+      <div class="bookGallery">
+        {% for entry in featuredBooks %}
+          <div class="bookGallery__item">
+            <a href="{{ entry.url }}"><img src="{{ entry.bookCover.first.url }}" alt="{{ entry.title }} by: {{ entry.externalAuthor }}" class="bookGallery__item__cover" /></a>
+          </div>
+        {% endfor %}
+      </div>
+
+      <p class="txt-center"><a href="/library/{{ category.slug }}" class="button button--pill">More Books</a></p>
+    </div>
+  </div>
+{% endif %}
 
 {% endblock %}
