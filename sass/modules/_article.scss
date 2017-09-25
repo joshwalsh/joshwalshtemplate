@@ -43,6 +43,14 @@
       font-size: em(16px, 14px);
     }
 
+    a {
+      text-decoration: none;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+
     @include respond-to(em(700px), max-width) {
       position: relative;
 

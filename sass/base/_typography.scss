@@ -63,4 +63,9 @@
 
 .fine-print {
   font-size: em(11px);
+
+  &--divided {
+    padding-bottom: 1em;
+    border-bottom: 1px #bbb solid;
+  }
 }

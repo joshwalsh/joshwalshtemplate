@@ -20,6 +20,11 @@
                     {% include '_components/_body' with {
                       'matrix': entry.body
                     } %}
+
+                    {% if entry.type == 'linkPosts' %}
+                      <p>* This is commentary written by {{ entry.relatedAuthor.first.title }} on a post originally by {{ entry.externalAuthor }} at <a href="{{ entry.externalURL }}">{{ entry.source }}</a>.
+                    {% endif %}
+
                 ]]></description>
             </item>
         {% endfor %}

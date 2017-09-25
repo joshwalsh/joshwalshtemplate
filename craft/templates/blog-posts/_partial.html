@@ -6,10 +6,17 @@
         </h2>
 
         <div class="article">
-          <p class="byline">
-            <strong>By: {{ article.relatedAuthor.first.title }}</strong>
-            on {{article.postDate|date("M d, Y")}}
-          </p>
+          {% if article.externalAuthor %}
+            <p class="byline">
+              <strong>By: {{ article.externalAuthor }}</strong>
+              <a href="{{ article.externalURL}}" title="Read full article at {{ article.source }}">&#9875;</a>
+            </p>
+          {% else %}
+            <p class="byline">
+              <strong>By: {{ article.relatedAuthor.first.title }}</strong>
+              on {{article.postDate|date("M d, Y")}}
+            </p>
+          {% endif %}
 
           <div class="article__content">
             {% include '_components/_body' with {
@@ -23,8 +30,8 @@
             {% case "blogPosts" %}
               <p><a href="{{ article.url }}" class="button">Continue Reading</a></p>
             {% case "linkPosts" %}
-              <p><a href="{{ article.externalURL}}" class="button">Read Full Story</a></p>
-              <p class="fine-print">Source: {{ article.externalAuthor}} at {{ article.source }}</p>
+              <p><a href="{{ article.externalURL}}" class="button">Read at {{ article.source }}</a></p>
+              <p class="fine-print">Linked article written by: {{ article.externalAuthor}}.</p>
           {% endswitch %}
         </div>
     </div>

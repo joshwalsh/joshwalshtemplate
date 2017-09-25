@@ -481,6 +481,9 @@ embed {
 
 .fine-print {
   font-size: 0.6875em; }
+  .fine-print--divided {
+    padding-bottom: 1em;
+    border-bottom: 1px #bbb solid; }
 
 .txt-left {
   text-align: left; }
@@ -825,6 +828,10 @@ embed {
     display: block;
     font-weight: 400;
     font-size: 1.14286em; }
+  .article-list-item .byline a {
+    text-decoration: none; }
+    .article-list-item .byline a:hover {
+      font-weight: bold; }
   @media screen and (max-width: 43.75em) {
     .article-list-item .byline {
       position: relative; }

@@ -5,13 +5,16 @@
 <div class="l-container article article-{{ entry.type }} read-guide">
   <div class="row">
     <div class="col-9 article__content">
+      {% if entry.type == 'linkPosts' %}
+        <p class="fine-print fine-print--divided">* This is commentary written by {{ entry.relatedAuthor.first.title }} on a post originally by {{ entry.externalAuthor }} at <a href="{{ entry.externalURL }}">{{ entry.source }}</a>.
+      {% endif %}
+
       {% include '_components/_body' with {
         'matrix': entry.body
       } %}
 
       {% if entry.type == 'linkPosts' %}
-        <p><a href="{{ entry.externalURL}}" class="button">Read Full Story</a>
-        <p class="fine-print">Source: {{ entry.externalAuthor}} at {{ entry.source }}</p>
+        <p><a href="{{ entry.externalURL}}" class="button">Read at {{ entry.source }}</a>
       {% endif %}
     </div>
   </div>
