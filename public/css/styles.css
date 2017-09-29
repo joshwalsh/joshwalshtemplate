@@ -1123,7 +1123,8 @@ form, input {
       margin-top: 0;
       line-height: 1.2em; }
   .mast .read-guide {
-    border-left-color: rgba(0, 0, 0, 0.3); }
+    border-left-color: rgba(0, 0, 0, 0.3);
+    padding-bottom: 2.5em; }
   .mast__byline {
     position: relative;
     font-size: 1.25em;
@@ -1135,7 +1136,7 @@ form, input {
     position: relative;
     z-index: 10;
     font-size: 1.5em;
-    padding-bottom: 1.66667em; }
+    padding-bottom: 0; }
   .mast__seperator {
     display: block;
     position: relative;

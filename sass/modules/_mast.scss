@@ -33,6 +33,7 @@
 
   .read-guide {
     border-left-color: rgba(0,0,0,0.3);
+    padding-bottom: em(40px);
   }
 
   &__byline {
@@ -48,7 +49,7 @@
     position: relative;
     z-index: 10;
     font-size: em(24px);
-    padding-bottom: em(40px, 24px);
+    padding-bottom: 0;
   }
 
   &__seperator {
